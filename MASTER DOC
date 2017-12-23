@@ -27,30 +27,42 @@ Locales -
 
 
 GAMEPLAY NOTES
-Aaaaa
+Aaaaa you boutnce the ballS>
 Story
 -General
-You are a droid, living in the [SWAMP] peripheral district of Nouveau Metro. Someone calls you from an unfamiliar number in [Arctic Cyburbia]. It’s your cousin. They’re calling from prison as they’ve been jailed for Bounce Ball Crimes. They deny the charges, but any resolution would be too late for them to compete in the next World circuit. Their spot needs filling and they want you to fill it. You’re only an amateur racer, but this could be your chance to prove yourself on the world stage, so you accept.
+You are a droid (synthetic lifeform, amphibious swamp model with many custom modifications), living in the [SWAMP] peripheral district of NOUVEAU METRO. Someone calls you from an unfamiliar number in ARCTIC CYBURBIA. It’s your cousin. They’re calling from prison as they’ve been jailed for Bounce Ball Crimes. They deny the charges, but any resolution would be too late for them to compete in the next World circuit. Their spot needs filling and they want you to fill it. You’re only an amateur racer, but this could be your chance to prove yourself on the world stage, so you accept.
 Racers
-The Cousin: The star of SWAMPTOWN, they taught you everything about racing that the internet couldn’t. You two are on mostly good terms, but there’s a distance between you that’s only grown since the moved to ARCTIC CITY. An all-around amazing racer, though a little (very) cocky.
-SWAMP WITCH: Old. Runs the tutorial track and helps get you used to racing again. She somehow made a racer out of wood.
+
+The Cousin: The star of SWAMPTOWN, they taught you everything about racing that the internet couldn’t. You two are on mostly good terms, but there’s a distance between you that’s only grown since they moved to ARCTIC CITY. An all-around amazing racer, though a little (very) cocky.
+SWAMP WITCH: Old. Runs and announces the tutorial track and helps get you used to racing again. She somehow made a racer out of wood. 
 VOID: Self-proclaimed rival to YOUR COUSIN, with an unhealthy obsession with beating them in the world series. They project some of this rivalry on to you. Extremely aggressive on the track, but much more reserved and polite everywhere else. Has kind of a stoic, edgy persona that softens as they get more familiar.
-Lemon: The first racer you meet in NOUVEAU METRO. Sweet and kind, but competitive to a fault. Don’t let her personality fool you, as LEMON is ruthless on the track. She tries to be as self-sufficient as possible, and built her own unorthodox racer that has nodules on the sides of its bubble that make it resemble a lemon.
-Sharky: Spikes on the bubble allow for better traction.
-Spitbug: Shy, avoids other racers on the track.
-Lunarcore:
-Graffiti Wizard:
-Fishtank: Racer is filled with water, or some kind of dense fluid, reducing its bounce and letting it build up more momentum.
-virus: racer looks like a virus [IDEA, RACER CAN STICK TO AND DETACH FROM OTHER RACERS]
-Lightstreak: Cowboy. Spends a lot of time looking at the sky.
-MeltyChrome: 
-Minimalist:
-Bandana:
-Grease Ape: Scrunged together a racer from the best parts of old broken ones.
-Hotrod: Dry badlands provide the perfect conditions for maintaining her pristine hotrod of a bounce ball racer. Scratch her ride and die.
+Lemon: The first racer you meet in NOUVEAU METRO. Sweet and kind, but competitive to a fault. Don’t let her personality fool you, as LEMON is ruthless on the track. She tries to be as self-sufficient as possible, and built her own unorthodox racer that has nodules on the sides of its bubble that affect its handling and make it resemble a lemon. She collects weird, non-sweet candy.
+Sharky: Spikes on the bubble allow for better traction. Sharp and fierce look with harsh colored clothes and spiky teeth, coupled with his outgoing personality and disregard for personal space can be overwhelming, but really, he just wants to be friendly and gets anxiety about accidently making people uncomfortable. 
+Spitbug: Shy, avoids other racers on the track. His racer’s bubble is made of smaller bubbles.
+Lunarcore: Strong of muscle and idealistic. She’s not an astronaut, but working on it. So dry of personality and academic you could forget she just sold you shrooms.
+Graffiti Wizard: He’s an old art teacher who got in to racing during his midlife crisis. Every time somebody uses red blue and yellow in the same design he ages by a month.
+Fishtank: Racer is filled with water, or some kind of dense fluid, reducing its bounce and letting it build up more momentum. Who’s driving this thing? Fuck if I know!
+virus: Racer looks like a virus [IDEA, RACER CAN STICK TO AND DETACH FROM OTHER RACERS]. Chaotic neutral scum whose sole goal it to get into finals and ruin the favorites chances of winning. More aware of what goes on behind the scenes of professional BBR.
+Lightstreak: Goth Cowboy. Spends a lot of time looking at the sky. 
+MeltyChrome: Worships the speed, she acts high but is sober. She can forget meals in the zone. Her racer has an extremely high top speed, but takes a while to accelerate and has difficulty turning.
+Minimalist: Broken the Bounce Ball Racer down to its most basic level. Obsessed with space saving and simplicity, sometime to their detriment. Eats raw pasta as a snack.
+Bandana: Crusty old biker lady who only wants two things: to ride, and to die.
+Grease Ape: Scrunged together a racer from the best parts of old broken ones. Gruff and antisocial, unless you want to talk about her current hyperfocus (not vehicles, but coffee and tea).
+Hotrod: Dry badlands provide the ideal conditions for maintaining her pristine hotrod of a bounce ball racer. Scratch her ride and die.
 Coppa Smoke: “My wife left me... Racing dulls the pain.” An ex-cop disillusioned with police work. She spends most of her off-time drinking, smoking, and listening to sad classic rock.
 Neon Mask: Depressed as fuck, but dealing with it. They use their position as a prominent racer to advocate for social causes, and is sometimes accused of pushing politics too hard, though they disagree. NEON MASK is hated by the ARCTIC CITY council, but is popular with the general populace of ARCTIC CITY, as well as abroad. They wear a mask because it’s easier than consistent facial grooming.
-BONUS – Spherical Visitor: An alien whose spherical shape, with a dense core and cushioned, gaseous outer shell makes them perfectly suited for BOUNCE BALL RACING.
+BONUS – Spherical Visitor: An alien whose spherical shape, with a dense core and cushioned, gaseous outer shell makes them perfectly suited for BOUNCE BALL RACING. They think the all the rolling and bouncing on the ground is kinky af and at first thought BBR was a sex thing, for sphere people.
+Other Characters/Groups
+The Sponsor: Rich, greasy, with zero style. Like boba tea too much; does tongue/mouth things to the bobas as an attempt at intimidation, but disgusts people instead. Sponsors VOID. Just the tip of the iceberg of Bounce Ball underground activity.
+Twin Guards: SPONSOR’s guards. Huge crane model enforcer droids with a taste for meat. RIGHT likes to crunch the bones, LEFT likes it well done. Will do pretty much anything for cash, they have dignified positions but no dignity.
+Announcers: 
+1.	Swamp: The OLD WITCH herself
+2.	Metro: 
+3.	Beach:
+4.	Desert:
+5.	Frontier:
+6.	Cyber:
+Pit Crew:
 Locales
 TUTORIAL SWAMP
 AREA: 
