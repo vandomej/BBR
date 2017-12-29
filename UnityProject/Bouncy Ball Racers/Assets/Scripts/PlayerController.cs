@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 m_movementVector;
 	private Vector3 m_reflection;
 
+	private bool isGrounded;
+
 	#endregion
 
 	// Use this for initialization
@@ -47,53 +49,77 @@ public class PlayerController : MonoBehaviour {
 		m_position = this.transform.position;
 		m_movementVector = Vector3.zero;
 		m_reflection = Vector3.zero;
+		isGrounded = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		m_timeSinceBounce += Time.deltaTime;
-		m_timeSinceJump += Time.deltaTime;
-		m_position = this.transform.position;
-
-		m_vert = Input.GetAxis("Vertical");
-		m_hort = Input.GetAxis("Horizontal");
-
-		//Handling jump (bounce) input
-		if (Input.GetButtonDown("Jump")) {
-			//If the player bounced within the last .25 seconds, then apply velocity multiplier, otherwise start the jump timer
-			if (m_timeSinceBounce < 0.25) {
-				m_currentVelocity.y *= 1 + (Mathf.Cos(m_timeSinceBounce * 2 * Mathf.PI) * MaxBounceGain);
-			} else {
-				m_timeSinceJump = 0.0f;
-			}
-		}
-
-		//m_currentVelocity = Vector3.RotateTowards(m_currentVelocity, this.transform)\
-		m_currentVelocity = Quaternion.AngleAxis(m_hort * RotationSpeed, Vector3.up) * m_currentVelocity;
-		m_currentVelocity += CurrentAcceleration * Time.deltaTime;
-		//m_currentVelocity.x = Mathf.Clamp(m_currentVelocity.x, -MaxAxisSpeed, MaxAxisSpeed);
-		//m_currentVelocity.y = Mathf.Clamp(m_currentVelocity.y, -MaxAxisSpeed, MaxAxisSpeed);
-		m_currentVelocity = Vector3.ClampMagnitude(m_currentVelocity, MaxSpeed);
-
-		this.transform.LookAt(new Vector3(m_position.x + m_currentVelocity.x, m_position.y, m_position.z + m_currentVelocity.z));
-		m_movementVector = (m_currentVelocity + this.transform.TransformDirection(new Vector3(m_hort * HorizontalSpeed, 0, m_vert * VerticalSpeed))) * Time.deltaTime;
-
-		if (Physics.SphereCast(m_position, Collider.radius * .9f, m_movementVector, out m_sphereHit, m_movementVector.magnitude)) {
-			this.MoveTransform(m_movementVector * m_sphereHit.distance);
-
-			m_reflection = Vector3.Reflect(m_movementVector, m_sphereHit.normal);
-
-			m_currentBounce = 1 + (
-				(m_timeSinceJump < 0.25) ? 
-				Mathf.Cos(m_timeSinceJump * 2 * Mathf.PI) * MaxBounceGain : 0
-				);
-
-			m_currentVelocity = m_reflection / Time.deltaTime;
-			m_currentVelocity.y *= m_currentBounce * Bounciness;
-			m_timeSinceBounce = 0.0f;
+		if (isGrounded) {
+			this.RollLoop();
 		} else {
-			this.MoveTransform(m_movementVector);
+			this.BounceLoop();
 		}
+		
+	}
+
+	public void BounceLoop() {
+		//At some point do raycasts directly downward a certain distance to get the distance in height that the ball is,
+		//Then if the max height of the ball at some point is too small, set isGrounded to true.
+		m_timeSinceBounce += Time.deltaTime;
+        m_timeSinceJump += Time.deltaTime;
+        m_position = this.transform.position;
+
+        m_vert = Input.GetAxis("Vertical");
+        m_hort = Input.GetAxis("Horizontal");
+
+        //Handling jump (bounce) input
+        if (Input.GetButtonDown("Jump"))
+        {
+            //If the player bounced within the last .25 seconds, then apply velocity multiplier, otherwise start the jump timer
+            if (m_timeSinceBounce < 0.25)
+            {
+                m_currentVelocity.y *= 1 + (Mathf.Cos(m_timeSinceBounce * 2 * Mathf.PI) * MaxBounceGain);
+            }
+            else
+            {
+                m_timeSinceJump = 0.0f;
+            }
+        }
+
+        //m_currentVelocity = Vector3.RotateTowards(m_currentVelocity, this.transform)\
+        m_currentVelocity = Quaternion.AngleAxis(m_hort * RotationSpeed, Vector3.up) * m_currentVelocity;
+        m_currentVelocity += CurrentAcceleration * Time.deltaTime;
+        //m_currentVelocity.x = Mathf.Clamp(m_currentVelocity.x, -MaxAxisSpeed, MaxAxisSpeed);
+        //m_currentVelocity.y = Mathf.Clamp(m_currentVelocity.y, -MaxAxisSpeed, MaxAxisSpeed);
+        m_currentVelocity = Vector3.ClampMagnitude(m_currentVelocity, MaxSpeed);
+
+        this.transform.LookAt(new Vector3(m_position.x + m_currentVelocity.x, m_position.y, m_position.z + m_currentVelocity.z));
+        m_movementVector = (m_currentVelocity + this.transform.TransformDirection(new Vector3(m_hort * HorizontalSpeed, 0, m_vert * VerticalSpeed))) * Time.deltaTime;
+
+        if (Physics.SphereCast(m_position, Collider.radius * .9f, m_movementVector, out m_sphereHit, m_movementVector.magnitude))
+        {
+            this.MoveTransform(m_movementVector * m_sphereHit.distance);
+
+            m_reflection = Vector3.Reflect(m_movementVector, m_sphereHit.normal);
+
+            m_currentBounce = 1 + (
+                (m_timeSinceJump < 0.25) ?
+                Mathf.Cos(m_timeSinceJump * 2 * Mathf.PI) * MaxBounceGain : 0
+                );
+
+            m_currentVelocity = m_reflection / Time.deltaTime;
+            m_currentVelocity.y *= m_currentBounce * Bounciness;
+            m_timeSinceBounce = 0.0f;
+        }
+        else
+        {
+            this.MoveTransform(m_movementVector);
+        }
+	}
+
+	public void RollLoop() {
+		//Raycast directly downward a certain distance. If there is no ground, then the ball is no longer grounded
+		//If there is, project a vector onto that plane and roll along the plane.
 	}
 
 	public void MoveTransform(Vector3 movement) {
