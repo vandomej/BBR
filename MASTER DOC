@@ -4,6 +4,9 @@ Gameplay -
 Story -
 Racers -
 Locales -
+
+test
+
 -Tutorial Swamp
 •	Area
 •	Track
@@ -27,35 +30,476 @@ Locales -
 
 
 GAMEPLAY NOTES
-Aaaaa you boutnce the ballS>
-Story
+STORY
 -General
 You are a droid (synthetic lifeform, amphibious swamp model with many custom modifications), living in the [SWAMP] peripheral district of NOUVEAU METRO. Someone calls you from an unfamiliar number in ARCTIC CYBURBIA. It’s your cousin. They’re calling from prison as they’ve been jailed for Bounce Ball Crimes. They deny the charges, but any resolution would be too late for them to compete in the next World circuit. Their spot needs filling and they want you to fill it. You’re only an amateur racer, but this could be your chance to prove yourself on the world stage, so you accept.
-Racers
+INTRO:
+From menu, menu track keeps playing but gets a little quitter
+*phone buzzing*
+The phone buzzes for a while (around three times)
+Menu music is shut off, phone is picked up.
+SCREEN: MC hand holding phone, centered, the screen shows the number is calling from [ARCTIC CYBURBIA], caller unknown.
+Mc thinks about hanging up, but then decides to answer.
 
+CHARACTERS
+MC: That’s you, the Main Character. Just living, at the moment, in the swamp, thinking of some big nebulous project (art or music related) but can’t get it going. Happy, but restless and unfulfilled. A control freak about your space and work, keeps you from working well with others. Have ingrained distrust of authority.
+-Real Name: (Player Picks)
+-Appearance
+•	Species: Droid, Civilian type, Amphibious Category, Axolotl Model
+•	Height: 3’5”
+•	Build: round, blunt and pudgy. Long, narrow digits. Short, round ended tail.
+•	Face: Rounded square, squarer towards the bottom. Slight downturn in the mouth.
+•	Skin/surface and hair: Dark swamp beige, mottled. No hair
+•	Eyes: Round, Black
+•	Modifications: Extra set of arms, obscure reference tattoo on tail. 
+-Style: Oversized Swamp Techwear. 80’s office colors.
+-Communication: Short, clipped, and quiet. Sounds more irritated and impatient then they actually are. Asks a lot of questions. Harder when talking to strangers, people they don’t like, softer and gets touchier with people they like or feel sympathy for. Low gestures. Usually seeking escape.
+-Racer: Jumper: average rolling speed, but great handling with snappy bounces. (like boosted compact star)
+-Tastes
+•	Aesthetics: Junky but functional. Compact. Organized chaos.
+•	Food: Bugs and things that crunch. Mmmm.
+•	Media: Artsy
+•	Music: Experimental
+-Hobbies: Taking shit apart. Making music, online DJ.
+-Other notes: Uses don’t-give-a-shit attitude as a defense mechanism. Fears putting their work out there. 
 The Cousin: The star of SWAMPTOWN, they taught you everything about racing that the internet couldn’t. You two are on mostly good terms, but there’s a distance between you that’s only grown since they moved to ARCTIC CITY. An all-around amazing racer, though a little (very) cocky.
+-Real Name: (Something that starts with a K, douchebag name)
+-Appearance
+•	Species: Droid, Civilian type, Amphibious Category, Axolotl Model
+•	Height: 3’2”
+•	Build: Mesomorphic, long rectangle. Square fingers and hands. Pointed tail.
+•	Face: Circular. Straight mouth. 
+•	Skin/surface and hair: Translucent, smooth. No hair
+•	Eyes: Round, Black
+•	Modifications: Custom glands of dubious legality. 
+-Style: Cultivated shit: Top heavy, intentional fashion crimes. Jarring color combos. Ugly brands and prints.
+-Communication: Overly casual, calls everyone dude/bro. Leads conversations, interrupts, direct. Not loud all the time, but projects their voice far. Sneery. High, wide, aggressive gestures. Holds people in conversations.
+-Racer: Drift Ball: Stronger, faster bounces when turning (analogous to the KAR turbo star)
+-Tastes
+•	Aesthetics: Vape Aesthetic, combined with Trash“punk”.
+•	Food: Fast and easy prep. Likes salt.
+•	Media: Hardcore gamer, prefers mobas and other team games that cause you pain. Doesn’t watch many movies and is a film snob. Hates action movies.
+•	Music: Chill anime beats, nothing too distracting.
+-Hobbies: See above, real gamin’ gamer. Actually invested in fashion.
+-Other notes: Hurtful when insecure. Hates being pressed. Patient and good at masking emotions.
 SWAMP WITCH: Old. Runs and announces the tutorial track and helps get you used to racing again. She somehow made a racer out of wood. 
+-Real Name:
+-Appearance
+•	Species: Human?
+•	Height: 5’5.5”
+•	Build: Slight, but strong from that swamp life. 
+•	Face: Angular bones, square frame, droops to the outside but focused in the middle.
+•	Eyes: Laughter lined, deep set, dark and shiny.
+•	Modifications: None that can be seen
+-Style: Utilitarian from the neck down. Overalls, gaiter boots, rolled up sleeves with waterproof gloves. Big fan of big hats. Modest or hidden jewelry made of bog wood, bones and sinew (possibly cursed).
+-Communication: Cryptic, rambling, conspiratorial. Gives unsolicited advice, sometimes off topic. Laughs to herself for uncomfortable amounts of time. Smooth, flowing gestures that contrast her hag™ voice.
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other Notes:
 VOID: Self-proclaimed rival to YOUR COUSIN, with an unhealthy obsession with beating them in the world series. They project some of this rivalry on to you. Extremely aggressive on the track, but much more reserved and polite everywhere else. Has kind of a stoic, edgy persona that softens as they get more familiar.
+-Real Name: Anastasia Dulo or some other Royal Slav Name.
+-Apperance
+•	Species: Droid (HTD), Fully Custom 
+•	Height: 15’
+•	Build: Thin but wide, Long-limbed avian/humanoid. Dense and springy.
+•	Face: Big metal heron beak with teeth.
+•	Skin/surface and hair: Matte Black metal, black synthetic flesh. 
+•	Eyes: Circular, black, almost on top of the mouth joint.
+•	Modifications: Fully custom body. Some temporary sponsorship decals.
+-Style: High class goth couture. 
+-Communication: Deepest voice, with a theatrical manner of speaking. Smooth and articulate until they get impassioned or upset, then they get squawky. Full body gestures, and also stabby hand ones. A good listener who supports conversations. Paces around and makes excessive eye contact and weird head motions. 
+-Racer: Dark Orb: fast, but slippery handling makes it difficult to use.
+-Tastes
+•	Aesthetics: Ow the edge, regal cyber-goth.
+•	Food: Light eater. Likes small (this is relative) food they can swallow whole. Red Wine, black coffee.
+•	Media: Likes slow pacing and atmosphere. Old-school horror. Romance. Character customization. 
+•	Music: Melodramatic Classical.
+-Hobbies: Appearing at parties, whether invited or not. Alternative Dance.
+-Other notes: Deceptively graceful, with uncanny special awareness (hints at possible combat or dance specialized tech). Craves drama. Power bottom. 
 Lemon: The first racer you meet in NOUVEAU METRO. Sweet and kind, but competitive to a fault. Don’t let her personality fool you, as LEMON is ruthless on the track. She tries to be as self-sufficient as possible, and built her own unorthodox racer that has nodules on the sides of its bubble that affect its handling and make it resemble a lemon. She collects weird, non-sweet candy.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Sharky: Spikes on the bubble allow for better traction. Sharp and fierce look with harsh colored clothes and spiky teeth, coupled with his outgoing personality and disregard for personal space can be overwhelming, but really, he just wants to be friendly and gets anxiety about accidently making people uncomfortable. 
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Spitbug: Shy, avoids other racers on the track. His racer’s bubble is made of smaller bubbles.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Lunarcore: Strong of muscle and idealistic. She’s not an astronaut, but working on it. So dry of personality and academic you could forget she just sold you shrooms.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Graffiti Wizard: He’s an old art teacher who got in to racing during his midlife crisis. Every time somebody uses red blue and yellow in the same design he ages by a month.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Fishtank: Racer is filled with water, or some kind of dense fluid, reducing its bounce and letting it build up more momentum. Who’s driving this thing? Fuck if I know!
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 virus: Racer looks like a virus [IDEA, RACER CAN STICK TO AND DETACH FROM OTHER RACERS]. Chaotic neutral scum whose sole goal it to get into finals and ruin the favorites chances of winning. More aware of what goes on behind the scenes of professional BBR.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Lightstreak: Goth Cowboy. Spends a lot of time looking at the sky. 
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 MeltyChrome: Worships the speed, she acts high but is sober. She can forget meals in the zone. Her racer has an extremely high top speed, but takes a while to accelerate and has difficulty turning.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Minimalist: Broken the Bounce Ball Racer down to its most basic level. Obsessed with space saving and simplicity, sometime to their detriment. Eats raw pasta as a snack.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Bandana: Crusty old biker lady who only wants two things: to ride, and to die.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Grease Ape: Scrunged together a racer from the best parts of old broken ones. Gruff and antisocial, unless you want to talk about her current hyperfocus (not vehicles, but coffee and tea).
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Hotrod: Dry badlands provide the ideal conditions for maintaining her pristine hotrod of a bounce ball racer. Scratch her ride and die.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Coppa Smoke: “My wife left me... Racing dulls the pain.” An ex-cop disillusioned with police work. She spends most of her off-time drinking, smoking, and listening to sad classic rock.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Neon Mask: Depressed as fuck, but dealing with it. They use their position as a prominent racer to advocate for social causes, and is sometimes accused of pushing politics too hard, though they disagree. NEON MASK is hated by the ARCTIC CITY council, but is popular with the general populace of ARCTIC CITY, as well as abroad. They wear a mask because it’s easier than consistent facial grooming.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 BONUS – Spherical Visitor: An alien whose spherical shape, with a dense core and cushioned, gaseous outer shell makes them perfectly suited for BOUNCE BALL RACING. They think the all the rolling and bouncing on the ground is kinky af and at first thought BBR was a sex thing, for sphere people.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Racer:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Other Characters/Groups
 The Sponsor: Rich, greasy, with zero style. Like boba tea too much; does tongue/mouth things to the bobas as an attempt at intimidation, but disgusts people instead. Sponsors VOID. Just the tip of the iceberg of Bounce Ball underground activity.
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication:
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
 Twin Guards: SPONSOR’s guards. Huge crane model enforcer droids with a taste for meat. RIGHT likes to crunch the bones, LEFT likes it well done. Will do pretty much anything for cash, they have dignified positions but no dignity.
-Announcers: 
+L
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
+R
+Real Name:
+-Apperance
+•	Species: 
+•	Height: 
+•	Build: 
+•	Face: 
+•	Skin/surface and hair: 
+•	Eyes: 
+•	Modifications: 
+-Style:
+-Communication
+-Tastes
+•	Aesthetics:
+•	Food:
+•	Media:
+•	Music:
+-Hobbies:
+-Other notes:
+Announcers:
 1.	Swamp: The OLD WITCH herself
 2.	Metro: 
 3.	Beach:
