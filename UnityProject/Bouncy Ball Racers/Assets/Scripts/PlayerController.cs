@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour {
 	public Vector3 CurrentAcceleration;
 
 	public float Bounciness = 0.6f;
-	public float MaxBounceGain = 1.3f;
+	public float MaxBounceGain = 2.0f;
 
-	public float MaxSpeed = 50.0f;
+	public float MaxSpeed = 60.0f;
 
-	public float VerticalSpeed = 10.0f;
+	public float MaxBounceHeight = 50.0f;
+
+	public float VerticalSpeed = 17.0f;
 
 	public float HorizontalSpeed = 5.0f;
 
@@ -78,7 +80,13 @@ public class PlayerController : MonoBehaviour {
             //If the player bounced within the last .25 seconds, then apply velocity multiplier, otherwise start the jump timer
             if (m_timeSinceBounce < 0.25)
             {
-                m_currentVelocity.y *= 1 + (Mathf.Cos(m_timeSinceBounce * 2 * Mathf.PI) * MaxBounceGain);
+				m_currentBounce = Bounciness + ((MaxBounceGain - Bounciness) * Mathf.Cos(m_timeSinceBounce * 2 * Mathf.PI));
+                if (Mathf.Abs(m_currentVelocity.y) < MaxBounceHeight)
+                {
+					m_currentVelocity.y = Mathf.Clamp(m_currentVelocity.y * m_currentBounce, float.MinValue, MaxBounceHeight);
+                }
+
+                m_timeSinceBounce = 0.26f;
             }
             else
             {
@@ -86,34 +94,48 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        //m_currentVelocity = Vector3.RotateTowards(m_currentVelocity, this.transform)\
         m_currentVelocity = Quaternion.AngleAxis(m_hort * RotationSpeed, Vector3.up) * m_currentVelocity;
         m_currentVelocity += CurrentAcceleration * Time.deltaTime;
-        //m_currentVelocity.x = Mathf.Clamp(m_currentVelocity.x, -MaxAxisSpeed, MaxAxisSpeed);
-        //m_currentVelocity.y = Mathf.Clamp(m_currentVelocity.y, -MaxAxisSpeed, MaxAxisSpeed);
-        m_currentVelocity = Vector3.ClampMagnitude(m_currentVelocity, MaxSpeed);
 
         this.transform.LookAt(new Vector3(m_position.x + m_currentVelocity.x, m_position.y, m_position.z + m_currentVelocity.z));
-        m_movementVector = (m_currentVelocity + this.transform.TransformDirection(new Vector3(m_hort * HorizontalSpeed, 0, m_vert * VerticalSpeed))) * Time.deltaTime;
-
-        if (Physics.SphereCast(m_position, Collider.radius * .9f, m_movementVector, out m_sphereHit, m_movementVector.magnitude))
+		Vector3 temp = m_currentVelocity + this.transform.TransformDirection(new Vector3(m_hort * HorizontalSpeed, 0, m_vert * VerticalSpeed));
+		temp.y = 0.0f;
+		if (temp.magnitude < MaxSpeed)
+		{
+			m_movementVector = temp;
+			m_movementVector.y = m_currentVelocity.y;
+        }
+		else
+		{
+			m_movementVector = m_currentVelocity;
+		}
+        
+        if (Physics.SphereCast(m_position, Collider.radius * .9f, m_movementVector * Time.deltaTime, out m_sphereHit, m_movementVector.magnitude * Time.deltaTime))
         {
-            this.MoveTransform(m_movementVector * m_sphereHit.distance);
+            this.MoveTransform(m_movementVector * m_sphereHit.distance * Time.deltaTime);
 
             m_reflection = Vector3.Reflect(m_movementVector, m_sphereHit.normal);
 
-            m_currentBounce = 1 + (
-                (m_timeSinceJump < 0.25) ?
-                Mathf.Cos(m_timeSinceJump * 2 * Mathf.PI) * MaxBounceGain : 0
-                );
-
-            m_currentVelocity = m_reflection / Time.deltaTime;
-            m_currentVelocity.y *= m_currentBounce * Bounciness;
-            m_timeSinceBounce = 0.0f;
+            m_currentVelocity = m_reflection;
+			
+			if (m_timeSinceJump < 0.25)
+			{
+				m_currentBounce = Bounciness + ((MaxBounceGain - Bounciness) * Mathf.Cos(m_timeSinceJump * 2 * Mathf.PI));
+				if (Mathf.Abs(m_currentVelocity.y) < MaxBounceHeight)
+				{
+					m_currentVelocity.y = Mathf.Clamp(m_currentVelocity.y * m_currentBounce, float.MinValue, MaxBounceHeight);
+				}
+			}
+			else
+			{
+				m_currentBounce = Bounciness;
+                m_timeSinceBounce = 0.0f;
+				m_currentVelocity.y *= m_currentBounce;
+			}
         }
         else
         {
-            this.MoveTransform(m_movementVector);
+            this.MoveTransform(m_movementVector * Time.deltaTime);
         }
 	}
 
