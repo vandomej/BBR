@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour {
 	public Transform PlayerTransform;
 	public Vector3 Displacement = Vector3.zero;
 	public Vector3 FocalPoint = Vector3.zero;
-	public float elasticity = 6.0f;
+	public float elasticity;
 	public float cameraHeightClamp = 5.0f;
 	
 	private Vector3 m_targetPosition;
