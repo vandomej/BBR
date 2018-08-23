@@ -8,5 +8,7 @@ public class CutSceneEditor : Editor {
 	public override void OnInspectorGUI()
 	{
 		CutScene myTarget = (CutScene)target;
+
+		EditorGUILayout.PropertyField(serializedObject.FindProperty("nextScene"));
 	}
 }
