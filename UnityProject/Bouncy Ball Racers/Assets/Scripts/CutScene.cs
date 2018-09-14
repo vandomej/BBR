@@ -6,13 +6,10 @@ public class CutScene : MonoBehaviour {
 
 	public string nextScene;
 
-	public CutScenePanel[] images;
-
-	private bool isTextAnimating = false;
+	public CutScenePanel[] panels;
 
 	// Use this for initialization
 	void Start () {
-		isTextAnimating = false;
 	}
 	
 	// Update is called once per frame
@@ -26,7 +23,7 @@ public class CutScene : MonoBehaviour {
 	IEnumerator LoadSceneAsync() {
 
         AsyncOperation asyncScene = SceneManager.LoadSceneAsync(nextScene);
-
+		
 		while (!asyncScene.isDone) {
 			yield return null;
 		}
