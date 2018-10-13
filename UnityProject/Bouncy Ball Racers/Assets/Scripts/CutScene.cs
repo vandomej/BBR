@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
+// Class used to handle the behavior of cutscenes, stores all of the cutscene data and then uses that data to properly
+// display the cutscene.
 public class CutScene : MonoBehaviour
 {
 
-    public string nextScene;
+    // The scene to go to after the cutscene has finished
+    public string NextScene;
 
-    public List<CutScenePanel> panels = new List<CutScenePanel>();
+    // The individual cutscene panels that contains information that is to be displayed on the panel.
+    public List<CutScenePanel> Panels = new List<CutScenePanel>();
 
     // Use this for initialization 
     void Start()
@@ -27,7 +31,7 @@ public class CutScene : MonoBehaviour
     IEnumerator LoadSceneAsync()
     {
 
-        AsyncOperation asyncScene = SceneManager.LoadSceneAsync(nextScene);
+        AsyncOperation asyncScene = SceneManager.LoadSceneAsync(NextScene);
 
         while (!asyncScene.isDone)
         {
