@@ -1,31 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class CutScene : MonoBehaviour {
+public class CutScene : MonoBehaviour
+{
 
-	public string nextScene;
+    public string nextScene;
 
-	public CutScenePanel[] panels;
+    public List<CutScenePanel> panels = new List<CutScenePanel>();
 
-	// Use this for initialization
-	void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey(KeyCode.S))
+    // Use this for initialization 
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (false)
         {
-			StartCoroutine(LoadSceneAsync());
-		}
-	}
+            StartCoroutine(LoadSceneAsync());
+        }
+    }
 
-	IEnumerator LoadSceneAsync() {
+    IEnumerator LoadSceneAsync()
+    {
 
         AsyncOperation asyncScene = SceneManager.LoadSceneAsync(nextScene);
-		
-		while (!asyncScene.isDone) {
-			yield return null;
-		}
-	}
+
+        while (!asyncScene.isDone)
+        {
+            yield return null;
+        }
+    }
 }
