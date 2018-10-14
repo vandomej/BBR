@@ -43,20 +43,58 @@ public class CutSceneEditor : Editor
             GUI.Box(panelArea, "Panel");
             GUILayout.Space(EditorGUIUtility.singleLineHeight * 2);
 
-            EditorGUILayout.PropertyField(obj.FindProperty("CharacterName"));
-            EditorGUILayout.PropertyField(obj.FindProperty("CharacterPortrait"));
+            //Instead of background area, just create a tiny little scene preview box, that doesn't have to display
+            //the dialogue, but at least displays the sprites. Also put it into its own function.
+
+            //Background area
+            var previewArea = EditorGUILayout.BeginVertical();
+            GUILayout.Space(EditorGUIUtility.singleLineHeight * 8);
+
+            Rect leftArea = new Rect(previewArea.x, previewArea.y, previewArea.width / 3.0f, previewArea.height);
+            Rect rightArea = new Rect(previewArea.x + (previewArea.width * 0.39f),
+            previewArea.y,
+            previewArea.width * 0.6f,
+            previewArea.height);
+
+            GUI.Box(rightArea, string.Empty);
+
+            EditorGUI.PrefixLabel(
+                new Rect(leftArea.x,
+                    leftArea.y + EditorGUIUtility.singleLineHeight,
+                    leftArea.width,
+                    EditorGUIUtility.singleLineHeight),
+                new GUIContent("Background"));
+
+            panel.Background = (Sprite)EditorGUI.ObjectField(
+                new Rect(leftArea.x,
+                    leftArea.y + (2.0f * EditorGUIUtility.singleLineHeight),
+                    leftArea.width,
+                    EditorGUIUtility.singleLineHeight),
+                panel.Background,
+                typeof(Sprite),
+                !EditorUtility.IsPersistent(Selection.activeObject));
+
+            if (panel.Background != null)
+            {
+                GUI.DrawTexture(rightArea, panel.Background.texture, ScaleMode.ScaleToFit);
+            }
+
+            EditorGUILayout.EndVertical();
 
             EditorGUILayout.PropertyField(obj.FindProperty("HasDialogue"));
             if (panel.HasDialogue)
             {
-                EditorGUILayout.PropertyField(obj.FindProperty("Dialogue"));
+                EditorGUILayout.PropertyField(obj.FindProperty("CharacterName"));
+                EditorGUILayout.PropertyField(obj.FindProperty("CharacterPortrait"));
+                panel.Dialogue = EditorGUILayout.TextField("Dialogue",
+                panel.Dialogue, GUILayout.Height(EditorGUIUtility.singleLineHeight * 4));
             }
             else
             {
                 EditorGUILayout.PropertyField(obj.FindProperty("WaitDuration"));
             }
 
-            EditorGUILayout.PropertyField(obj.FindProperty("Background"));
+
             EditorGUILayout.PropertyField(obj.FindProperty("SoundEffect"));
             EditorGUILayout.PropertyField(obj.FindProperty("Music"));
             EditorGUILayout.Space();
@@ -133,7 +171,9 @@ public class CutSceneEditor : Editor
         GUILayout.FlexibleSpace();
         if (GUILayout.Button("Add Panel"))
         {
-            myTarget.Panels.Add(ScriptableObject.CreateInstance<CutScenePanel>());
+            var panel = ScriptableObject.CreateInstance<CutScenePanel>();
+            panel.HasDialogue = true;
+            myTarget.Panels.Add(panel);
         }
         EditorGUILayout.EndHorizontal();
 

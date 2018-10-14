@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class CutScenePanel : ScriptableObject
 {
     // The background image which the characters and objects are placed on.
-    public Image Background;
+    public Sprite Background;
 
     // Indicates whether the panel has dialogue or rather is intended as a pause, when true the Dialogue property will
     // be displayed on the screen, otherwise the screen will display for the time specified in the WaitDuration 
@@ -20,7 +20,7 @@ public class CutScenePanel : ScriptableObject
 
     // An image representing the portrait of the character, image is supposed to be small and will be displayed next to
     // the dialogue box.
-    public Image CharacterPortrait;
+    public Sprite CharacterPortrait;
 
     // The dialogue text that will display for the currently talking character.
     public string Dialogue;

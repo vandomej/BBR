@@ -7,7 +7,7 @@ using System.Collections;
 public class CutSceneImage : ScriptableObject
 {
     // The sprite image that is added to the panel
-    public Image Image;
+    public Sprite Image;
 
     // The layer index for the respective image (the higher the ZIndex, the further up front the image will be 
     // displayed).
