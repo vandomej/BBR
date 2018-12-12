@@ -16,6 +16,12 @@ public class CutSceneImage : ScriptableObject
     // The position in the scene that the image will take (should change this to Rect).
     public Vector2 Position;
 
+    // The horizontal scale of the image
+    public float vScale;
+
+    // The vertical scale of the image
+    public float hScale;
+
     // The animation chosen for this image that will take effect at the start of the panel displaying.
     public CutSceneAnimation Animation;
 

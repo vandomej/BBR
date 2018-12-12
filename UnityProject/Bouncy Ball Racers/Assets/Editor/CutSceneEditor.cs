@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using BBRUtilities;
 
 // Editor class respective to the CutScene behavioral class. Handles the data hierarchy in the editor, as well as the
 // modification of the data by the user.
@@ -30,6 +31,9 @@ public class CutSceneEditor : Editor
 
         // Displaying a field so that the user can specify the next scene
         EditorGUILayout.PropertyField(NextScene);
+        EditorGUILayout.Slider(serializedObject.FindProperty("DialogHorizontalPadding"), 0.0f, 20.0f, "Dialog Horizontal Padding");
+        EditorGUILayout.Slider(serializedObject.FindProperty("DialogVerticalArea"), 0.0f, 1.0f, "Dialog Vertical Area");
+        EditorGUILayout.Slider(serializedObject.FindProperty("DialogVerticalPadding"), 0.0f, 40.0f, "Dialog Vertical Padding");
         EditorGUILayout.Space();
 
         // Starting a loop for all of the panels currently on the object.
@@ -46,41 +50,60 @@ public class CutSceneEditor : Editor
             //Instead of background area, just create a tiny little scene preview box, that doesn't have to display
             //the dialogue, but at least displays the sprites. Also put it into its own function.
 
-            //Background area
+            //Preview area
             var previewArea = EditorGUILayout.BeginVertical();
-            GUILayout.Space(EditorGUIUtility.singleLineHeight * 8);
+            GUILayout.Space(EditorGUIUtility.singleLineHeight * 12);
 
-            Rect leftArea = new Rect(previewArea.x, previewArea.y, previewArea.width / 3.0f, previewArea.height);
-            Rect rightArea = new Rect(previewArea.x + (previewArea.width * 0.39f),
-            previewArea.y,
-            previewArea.width * 0.6f,
-            previewArea.height);
-
-            GUI.Box(rightArea, string.Empty);
-
-            EditorGUI.PrefixLabel(
-                new Rect(leftArea.x,
-                    leftArea.y + EditorGUIUtility.singleLineHeight,
-                    leftArea.width,
-                    EditorGUIUtility.singleLineHeight),
-                new GUIContent("Background"));
-
-            panel.Background = (Sprite)EditorGUI.ObjectField(
-                new Rect(leftArea.x,
-                    leftArea.y + (2.0f * EditorGUIUtility.singleLineHeight),
-                    leftArea.width,
-                    EditorGUIUtility.singleLineHeight),
-                panel.Background,
-                typeof(Sprite),
-                !EditorUtility.IsPersistent(Selection.activeObject));
-
+            GUI.Box(previewArea, string.Empty);
             if (panel.Background != null)
             {
-                GUI.DrawTexture(rightArea, panel.Background.texture, ScaleMode.ScaleToFit);
+                GUI.DrawTexture(previewArea, panel.Background.texture, ScaleMode.StretchToFill);
+            }
+
+            List<CutSceneImage> temp = new List<CutSceneImage>(panel.Images);
+            temp.Sort(BBRUtilities.Comparer.Get<CutSceneImage>((i1, i2) => i1.ZIndex - i2.ZIndex));
+            for (int j = 0; j < temp.Count; j++)
+            {
+                var image = temp[j];
+                if (image.Image != null)
+                {
+                    var imageX = previewArea.x + (previewArea.width * image.Position.x);
+                    var imageY = previewArea.y + (previewArea.height * image.Position.y);
+                    var imageRect = new Rect(
+                        imageX,
+                        imageY,
+                        (image.hScale * previewArea.width),
+                        (image.vScale * previewArea.height)
+                    );
+                    GUI.DrawTexture(imageRect, image.Image.texture, ScaleMode.StretchToFill);
+                }
+            }
+
+            if (panel.HasDialogue)
+            {
+                var dialogRect = new Rect(
+                    previewArea.x + myTarget.DialogHorizontalPadding,
+                    previewArea.y + ((previewArea.height - (previewArea.height * myTarget.DialogVerticalArea)) + myTarget.DialogVerticalPadding),
+                    previewArea.width - (2 * myTarget.DialogHorizontalPadding),
+                    (previewArea.height * myTarget.DialogVerticalArea) - (2 * myTarget.DialogVerticalPadding)
+                );
+                GUI.Box(dialogRect, panel.Dialogue);
+                if (panel.CharacterPortrait != null)
+                {
+                    var portraitRect = new Rect(
+                        dialogRect.x - 10,
+                        dialogRect.y - 10,
+                        35,
+                        40
+                    );
+                    GUI.DrawTexture(portraitRect, panel.CharacterPortrait.texture, ScaleMode.StretchToFill);
+                }
+
             }
 
             EditorGUILayout.EndVertical();
 
+            EditorGUILayout.PropertyField(obj.FindProperty("Background"));
             EditorGUILayout.PropertyField(obj.FindProperty("HasDialogue"));
             if (panel.HasDialogue)
             {
@@ -93,7 +116,6 @@ public class CutSceneEditor : Editor
             {
                 EditorGUILayout.PropertyField(obj.FindProperty("WaitDuration"));
             }
-
 
             EditorGUILayout.PropertyField(obj.FindProperty("SoundEffect"));
             EditorGUILayout.PropertyField(obj.FindProperty("Music"));
@@ -119,7 +141,19 @@ public class CutSceneEditor : Editor
 
                 EditorGUILayout.PropertyField(imageObject.FindProperty("Image"));
                 EditorGUILayout.PropertyField(imageObject.FindProperty("ZIndex"));
-                EditorGUILayout.PropertyField(imageObject.FindProperty("Position"));
+
+                EditorGUILayout.BeginHorizontal();
+                image.Position.x = EditorGUILayout.Slider("Horizontal Position", image.Position.x, 0.0f, 1.0f);
+                EditorGUILayout.EndHorizontal();
+
+                EditorGUILayout.Slider(imageObject.FindProperty("hScale"), 0.0f, 1.0f, "Horizontal Scale");
+
+                EditorGUILayout.BeginHorizontal();
+                image.Position.y = EditorGUILayout.Slider("Vertical Position", image.Position.y, 0.0f, 1.0f);
+                EditorGUILayout.EndHorizontal();
+
+                EditorGUILayout.Slider(imageObject.FindProperty("vScale"), 0.0f, 1.0f, "Vertical Scale");
+
                 EditorGUILayout.PropertyField(imageObject.FindProperty("Animation"));
 
                 if (GUILayout.Button("Remove Image"))
@@ -140,7 +174,10 @@ public class CutSceneEditor : Editor
             GUILayout.FlexibleSpace();
             if (GUILayout.Button("Add Image"))
             {
-                panel.Images.Add(ScriptableObject.CreateInstance<CutSceneImage>());
+                var image = ScriptableObject.CreateInstance<CutSceneImage>();
+                image.hScale = 1.0f;
+                image.vScale = 1.0f;
+                panel.Images.Add(image);
             }
             EditorGUILayout.EndHorizontal();
 
@@ -173,6 +210,10 @@ public class CutSceneEditor : Editor
         {
             var panel = ScriptableObject.CreateInstance<CutScenePanel>();
             panel.HasDialogue = true;
+            if (myTarget.Panels.Count != 0)
+            {
+                panel.Background = myTarget.Panels[myTarget.Panels.Count - 1].Background;
+            }
             myTarget.Panels.Add(panel);
         }
         EditorGUILayout.EndHorizontal();
